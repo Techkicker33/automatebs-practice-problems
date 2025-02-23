@@ -5,15 +5,21 @@ def isValidChessBoard():
     colors = ('b','w')
     pieces = ('rook','queen','king','bishop','pawn','knight')
     vaxis = ('1','2','3','4','5','6','7','8')
-    haxis = ('a','b','c','d','e','f','g')
+    haxis = ('a','b','c','d','e','f','g','h')
 
     def boardBuild(letter,number):
-        board=[]
+        gridList=[]
+        board={}
         for i in letter:
             for j in number:
-                board.append(str(i)+str(j))
-                
+                gridList.append(str(i)+str(j))
+
+        for t in gridList:
+            board.setdefault(t,'')    
+        
+        #print(board) #used for validation
         return board
+
     
     
     theBoard = boardBuild(haxis,vaxis)
