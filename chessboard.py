@@ -11,14 +11,14 @@ def isValidChessBoard():
         board=[]
         for i in letter:
             for j in number:
-                board=board.append(str(i)+str(j))
-                print(board)
+                board.append(str(i)+str(j))
+                
         return board
     
     
     theBoard = boardBuild(haxis,vaxis)
     #theBoard = {'a1':'','a2':'','a3':'','a4':'','a5':'','a6':'','a7':'','a8':'','b1':'','b2':''}
-    print(theBoard)
+    #print('the board is '+str(theBoard))
     return theBoard
 
-
+print(isValidChessBoard())
