@@ -1,4 +1,6 @@
 #chessboard={'1h':'bking','6c':'wqueen','2g':'bbishop','5h':'bbqueen','3e':'wking'}
+import pprint
+
 
 def isValidChessBoard():
     '''chess board problem from Automate the boring stuff chapter 5'''
@@ -8,11 +10,12 @@ def isValidChessBoard():
     haxis = ('a','b','c','d','e','f','g','h')
 
     def boardBuild(letter,number):
+        #build board with number_letter notation and set to empty initial states
         gridList=[]
         board={}
-        for i in letter:
-            for j in number:
-                gridList.append(str(i)+str(j))
+        for i in number:
+            for j in letter:
+                gridList.append(str(j)+str(i))
 
         for t in gridList:
             board.setdefault(t,'')    
@@ -22,9 +25,9 @@ def isValidChessBoard():
 
     
     
-    theBoard = boardBuild(haxis,vaxis)
-    #theBoard = {'a1':'','a2':'','a3':'','a4':'','a5':'','a6':'','a7':'','a8':'','b1':'','b2':''}
-    #print('the board is '+str(theBoard))
+    theBoard = boardBuild(vaxis,haxis)
+    
+    
     return theBoard
 
-print(isValidChessBoard())
+pprint.pprint(isValidChessBoard())
