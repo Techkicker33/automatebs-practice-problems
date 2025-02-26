@@ -24,7 +24,15 @@ def isValidChessBoard(move):
     vaxis = ('1','2','3','4','5','6','7','8')
     haxis = ('a','b','c','d','e','f','g','h')
     maxPieceCount = 16
-    
+    wpieces=[]
+    bpieces=[]
+
+    for i in pieces:
+        wpieces=str(colors[1])+str(pieces)
+        bpieces=str(colors[0])+str(pieces)
+
+
+
     #Build the board-------------------------------------------------------------
     def boardBuild(letter,number):
         #build board with number_letter notation and set to empty initial states.  
@@ -51,12 +59,14 @@ def isValidChessBoard(move):
     wcount=0
     bcount=0
     #count pieces----------------------------------------------------------------
-    if colors[1] in theBoard.values():
-        wcount+=1
-        print(wcount)
-    elif colors[0] in theBoard.values():
-        bcount+=1
-        print(bcount)
+    for i in wpieces:
+        if wpieces in theBoard.values():
+            wcount+=1
+            print(wcount)
+    for i in bpieces:
+        if bpieces in theBoard.values():
+            bcount+=1
+            print(bcount)
 
     #confirm if the kings are in play--------------------------------------------
     if 'bking' and 'wking' in theBoard:
