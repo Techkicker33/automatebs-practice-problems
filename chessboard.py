@@ -25,8 +25,7 @@ def isValidChessBoard(move):
     haxis = ('a','b','c','d','e','f','g','h')
     maxPieceCount = 16
     
-
-
+    #Build the board-------------------------------------------------------------
     def boardBuild(letter,number):
         #build board with number_letter notation and set to empty initial states.  
         # This avoids manually typing the full list
@@ -47,27 +46,31 @@ def isValidChessBoard(move):
     theBoard.update(move)
     #print(theBoard)  #for validation
     
+
+    #start board validation------------------------------------------------------
     wcount=0
     bcount=0
-
-    if 'w' in theBoard.values():
+    #count pieces----------------------------------------------------------------
+    if colors[1] in theBoard.values():
         wcount+=1
         print(wcount)
 
-    if 'b' in theBoard.values():
+    if colors in theBoard.values():
         bcount+=1
         print(bcount)
 
+    #confirm if the kings are in play--------------------------------------------
     if 'bking' and 'wking' in theBoard:
         print('This is a valid chess board')
-        break
     elif 'bking' or 'wking' not in theBoard:
-        print('A king is dead, the game is over')
+        print('A king is dead, the game is over')    
         
-        
     
     
     
-    #return theBoard #pass the board back up to the main level
+    return theBoard #pass the board back up to the main level
+
+
+    
 
 pprint.pprint(isValidChessBoard(move)) #print the board in its current state
