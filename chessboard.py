@@ -55,7 +55,7 @@ def isValidChessBoard(move):
         wcount+=1
         print(wcount)
 
-    if colors in theBoard.values():
+    if colors[0] in theBoard.values():
         bcount+=1
         print(bcount)
 
