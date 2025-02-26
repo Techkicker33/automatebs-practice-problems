@@ -15,7 +15,7 @@ This function should detect when a bug has resulted in an improper chess board.'
 
 import pprint
 
-move={'1h':'bking','6c':'wqueen','2g':'bbishop','5h':'bbqueen','3e':'wking'}
+move={'1h':'bking','6c':'wqueen','2g':'bbishop','5h':'bqueen','3e':'wking'}
 
 def isValidChessBoard(move):
     '''chess board problem from Automate the boring stuff chapter 5'''
@@ -45,17 +45,29 @@ def isValidChessBoard(move):
     theBoard = boardBuild(vaxis,haxis) #call board build function and pass the axis values
     
     theBoard.update(move)
-    print(theBoard)  #for validation
+    #print(theBoard)  #for validation
     
+    wcount=0
+    bcount=0
 
-    if 'bking' or 'wking' in theBoard:
-        print('there is a king')
-    elif 'bking' and 'wking' not in theBoard:
-        print('Both kings are dead')
+    if 'w' in theBoard.values():
+        wcount+=1
+        print(wcount)
+
+    if 'b' in theBoard.values():
+        bcount+=1
+        print(bcount)
+
+    if 'bking' and 'wking' in theBoard:
+        print('This is a valid chess board')
+        break
+    elif 'bking' or 'wking' not in theBoard:
+        print('A king is dead, the game is over')
+        
         
     
     
     
-    return theBoard #pass the board back up to the main level
+    #return theBoard #pass the board back up to the main level
 
 pprint.pprint(isValidChessBoard(move)) #print the board in its current state
