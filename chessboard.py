@@ -85,9 +85,9 @@ def isValidChessBoard(move):
     
     
     
-    return theBoard #pass the board back up to the main level
+    return True #pass the boolean board back up to the main level
 
  
 answer = isValidChessBoard(move)
 
-#pprint.pprint(answer) #print the board in its current state
+pprint.pprint(answer) #print the board in its current state
