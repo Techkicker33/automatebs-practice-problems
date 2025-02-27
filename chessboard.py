@@ -74,9 +74,9 @@ def isValidChessBoard(move):
             #print(bcount)
 
     #confirm if the kings are in play--------------------------------------------
-    if 'bking' and 'wking' in theBoard:
+    if 'bking' and 'wking' in theBoard.values():
         print('This is a valid chess board')
-    elif 'bking' or 'wking' not in theBoard:
+    elif 'bking' or 'wking' not in theBoard.values():
         print('A king is dead, the game is over')    
         
     
