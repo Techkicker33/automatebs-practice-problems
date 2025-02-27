@@ -73,6 +73,9 @@ def isValidChessBoard(move):
             bcount+=1
             #print(bcount)
 
+    if bcount or wcount >16:
+        print('too many pieces ' + str(bcount) +(' ')+ str(wcount))
+    
     #confirm if the kings are in play--------------------------------------------
     if 'bking' and 'wking' in theBoard.values():
         print('This is a valid chess board')
@@ -84,7 +87,7 @@ def isValidChessBoard(move):
     
     return theBoard #pass the board back up to the main level
 
+ 
+answer = isValidChessBoard(move)
 
-    
-
-pprint.pprint(isValidChessBoard(move)) #print the board in its current state
+#pprint.pprint(answer) #print the board in its current state
