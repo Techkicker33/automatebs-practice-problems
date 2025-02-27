@@ -75,20 +75,21 @@ while True:
 
         if bcount or wcount >16:
             print('too many pieces ' + str(bcount) +(' ')+ str(wcount))
-        break    
+            answer = False
+        
         
         #confirm if the kings are in play--------------------------------------------
         if 'bking' and 'wking' in theBoard.values():
             print('This is a valid chess board')
-            break
+            answer=True
         elif 'bking' or 'wking' not in theBoard.values():
             print('A king is dead, the game is over')
-            break   
+            answer=False  
             
         
         
         
-        return True #pass the boolean board back up to the main level
+        return answer #pass the boolean board back up to the main level
 
     answer = isValidChessBoard(move)
 
