@@ -70,7 +70,7 @@ def displayInventory(item):
         print('The item is '+str(k)+' and the count is '+str(v))
         item_total += v
         
-    return item_total,
+    return item_total
     
 
 print("The total number of items: "+ str(displayInventory(stuff)))
