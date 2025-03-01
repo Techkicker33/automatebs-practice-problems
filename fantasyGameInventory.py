@@ -65,7 +65,6 @@ stuff = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
 def displayInventory(item):
     print("Inventory:")
     print(item)
-    print(item)
     item_total = 0
     totalInv={}
     for k, v in item.items():
