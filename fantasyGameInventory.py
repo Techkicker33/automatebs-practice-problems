@@ -61,15 +61,19 @@ Total number of items: 48'''
 
 stuff = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
 
-def displayInventory(inventory):
+def displayInventory(item):
     print("Inventory:")
+    print(item)
     item_total = 0
-    for k, v in inventory.items():
-        item_total = item_total+ v.get(k,0)
-    return item_total
-    print("Total number of items: " + str(item_total))
+    totalInv={}
+    for k, v in item.items():
+        print('The item is '+str(k)+' and the count is '+str(v))
+        item_total += v
+        
+    return item_total,
+    
 
-displayInventory(stuff)
+print("The total number of items: "+ str(displayInventory(stuff)))
 """
 def addToInventory(inventory, addedItems):
     # your code goes here
