@@ -64,7 +64,7 @@ stuff = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
 
 def displayInventory(item):
     print("Inventory:")
-    print(item)
+    #print(item)
     item_total = 0
     totalInv={}
     for k, v in item.items():
@@ -75,18 +75,19 @@ def displayInventory(item):
     
 
 print("The total number of items: "+ str(displayInventory(stuff)))
-"""
+
 def addToInventory(inventory, addedItems):
-    # your code goes here
-    for k,v in inventory().items:
-        if k in addedItems.key():
-            inventory.update(addItems())
+        #print(inventory)
+    added={k:v for k,v  in enumerate(addedItems)}
+    for k,v in inventory.items():
+        if k in added[k]:
+            inventory.update(addedItems())
         else:
             break
 
     
 
-inv = {'gold coin': 42, 'rope': 1}
-dragonLoot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
-inv = addToInventory(inv, dragonLoot)
-displayInventory(inv)"""
+inv = {'gold coin': 42, 'rope': 1} # dict type
+dragonLoot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby'] # list type that needs to convert into a dict for update
+finalinv = addToInventory(inv, dragonLoot)
+print(displayInventory(finalinv))
