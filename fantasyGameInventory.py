@@ -80,8 +80,8 @@ def addToInventory(inventory, addedItems):
         #print(inventory)
     added={k:v for k,v  in enumerate(addedItems)}
     for k,v in inventory.items():
-        if k in added[k]:
-            inventory.update(addedItems())
+        if v in added[v]:
+            inventory.update(added())
         else:
             break
 
