@@ -78,12 +78,10 @@ print("The total number of items: "+ str(displayInventory(stuff)))
 
 def addToInventory(inventory, addedItems):
         #print(inventory)
-    added={k:v for k,v  in enumerate(addedItems)}
-    for k,v in inventory.items():
-        if v in added[v]:
-            inventory.update(added())
-        else:
-            break
+     for item in addedItems:
+        inventory.setdefault(item, 0) #sets default to avoid key error
+        inventory[item] += 1 #indexs values
+        return inventory
 
     
 
