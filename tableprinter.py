@@ -30,7 +30,10 @@ def printTable(tableData):
     print(colWidths)
     for i in tableData:
         print(len(i)) # used for validation of for loop. next step is to compare column width against length of the index in the list.
-        
+        for j in i:
+            print(len(j))
+            if len(j) > colWidths[0]:
+                colWidths[0] = len(j)
             
     
 
