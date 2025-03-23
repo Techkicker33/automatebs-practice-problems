@@ -25,15 +25,13 @@ tableData = [['apples', 'oranges', 'cherries', 'banana'],
              ['Alice', 'Bob', 'Carol', 'David'],
              ['dogs', 'cats', 'moose', 'goose']]
 
-def printTable(tableData):
-    colWidths = [0] * len(tableData)
+def printTable(data):
+    colWidths = [0] * len(data)
     print(colWidths)
-    for i in tableData:
-        print(len(i)) # used for validation of for loop. next step is to compare column width against length of the index in the list.
-        for j in i:
-            print(len(j))
-            if len(j) > colWidths[0]:
-                colWidths[0] = len(j)
+    for i in data:
+        for j in data(i):
+            if len(j) > colWidths[data.index(i)]:
+                colWidths[data.index(i)] = len(j)
             
     
 
