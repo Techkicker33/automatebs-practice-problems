@@ -27,12 +27,14 @@ tableData = [['apples', 'oranges', 'cherries', 'banana'],
 
 def printTable(data):
     colWidths = [0] * len(data)
-    print(colWidths)
-    for i in data:
-        for j in data(i):
-            if len(j) > colWidths[data.index(i)]:
-                colWidths[data.index(i)] = len(j)
-            
+    #print(colWidths) #returned [0,0,0]
+    
+    for i in range(len(data)):
+        for j in range(len(data[i])):
+            if len(data[i][j]) > colWidths[i]:
+                colWidths[i] = len(data[i][j]) #looks to be functioning correctly.  returned [8,5,5]
+    #print(colWidths)
+
     
 
 printTable(tableData)
